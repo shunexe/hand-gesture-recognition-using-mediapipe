@@ -21,15 +21,16 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install pip -U \
+    && pip3 install cmake \	
     && pip install -U onnx \
     && pip install -U onnx-simplifier \
     && python3 -m pip install -U onnx_graphsurgeon --index-url https://pypi.ngc.nvidia.com \
     && pip install -U simple_onnx_processing_tools \
-    && pip install tensorflow==2.8.0 \
-    && pip install mediapipe==0.8.1 --no-deps \
-    && pip install opencv-python==4.1.2.30 \
-    && pip install scikit-learn==0.23.2 \
-    && pip install matplotlib==3.3.2
+    && pip install tensorflow==2.10.0 \
+    && pip install mediapipe==0.8.9.1 --no-deps \
+    && pip install opencv-python==4.6.0.66 \
+    && pip install scikit-learn==1.0.2 \
+    && pip install matplotlib==3.5.1
 
 ENV USERNAME=user
 RUN echo "root:root" | chpasswd \
