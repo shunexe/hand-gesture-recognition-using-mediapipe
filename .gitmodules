@@ -1,0 +1,3 @@
+[submodule "hamsa"]
+	path = hamsa
+	url = git@gitlab.com:shunexe/hamsa.git
