@@ -1,0 +1,17 @@
+version: '3'
+services:
+  hand_gesture_recognition:
+    build: .
+    image: hand_gesture
+    shm_size: '3gb'
+    tty: true
+    devices:
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+      - "/dev/video1:/dev/video0"
+    volumes:
+      - .:/home/user/workdir
+      - /tmp/.X11-unix/:/tmp/.X11-unix:rw
+      - /tmp/argus_socket:/tmp/argus_socket
+    environment:
+      - DISPLAY=${DISPLAY}
+    working_dir: /home/user/workdir
