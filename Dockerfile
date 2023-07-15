@@ -30,7 +30,9 @@ RUN pip3 install pip -U \
     && pip install mediapipe==0.8.9.1 --no-deps \
     && pip install opencv-python==4.6.0.66 \
     && pip install scikit-learn==1.0.2 \
-    && pip install matplotlib==3.5.1
+    && pip install matplotlib==3.5.1 \
+    && pip install opencv-contrib-python \
+    && pip install attrs
 
 ENV USERNAME=user
 RUN echo "root:root" | chpasswd \
