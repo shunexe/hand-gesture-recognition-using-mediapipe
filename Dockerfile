@@ -34,6 +34,9 @@ RUN pip3 install pip -U \
     && pip install opencv-contrib-python \
     && pip install attrs
 
+# For hamsa installation
+RUN pip install pybind11 && pip install pyyaml
+
 ENV USERNAME=user
 RUN echo "root:root" | chpasswd \
     && adduser --disabled-password --gecos "" "${USERNAME}" \
@@ -46,3 +49,6 @@ WORKDIR ${WKDIR}
 RUN sudo chown ${USERNAME}:${USERNAME} ${WKDIR}
 RUN echo 'export QT_X11_NO_MITSHM=1' >> ${HOME}/.bashrc
 RUN echo 'sudo chmod 776 /dev/video*' >> ${HOME}/.bashrc
+
+# To get access to usb port
+RUN echo 'sudo chmod 776 /dev/ttyUSB0' >> ${HOME}/.bashrc
