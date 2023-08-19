@@ -16,6 +16,7 @@ RUN apt-get update \
         libsm6 \
         libxext6 \
         libxrender-dev \
+	    vim \
     && sed -i 's/# set linenumbers/set linenumbers/g' /etc/nanorc \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*
@@ -32,7 +33,10 @@ RUN pip3 install pip -U \
     && pip install scikit-learn==1.0.2 \
     && pip install matplotlib==3.5.1 \
     && pip install opencv-contrib-python \
-    && pip install attrs
+    && pip install attrs \
+    && pip install jupyterlab \
+    && pip install pandas \
+    && pip install seaborn
 
 # For hamsa installation
 RUN pip install pybind11 && pip install pyyaml
