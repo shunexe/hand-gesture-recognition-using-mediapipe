@@ -5,6 +5,8 @@ services:
     image: hand_gesture
     shm_size: '3gb'
     tty: true
+    ports:
+      - "8888:8888"
     devices:
       - "/dev/ttyUSB0:/dev/ttyUSB0"
       - "/dev/video1:/dev/video0"
