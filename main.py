@@ -198,6 +198,15 @@ def main():
                     if this_gesture == 'Close':
                       Poses.custom_fist(move_time)
                       current_gesture = this_gesture
+                    if this_gesture == 'V_Sign':
+                      Poses.custom_peace(move_time)
+                      current_gesture = this_gesture
+                    if this_gesture == 'Okay':
+                      Poses.custom_ok(move_time)
+                      current_gesture = this_gesture
+                    if this_gesture == 'Wish':
+                      Poses.wish(move_time)
+                      current_gesture = this_gesture
         else:
             point_history.append([0, 0])
 
